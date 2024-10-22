@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c21ba97aa692418557c5c529fd8add83918cab60e8b2ea3bc134af2202376c69
-size 742
+"use client";
+import "./globals.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+    return (
+        <html lang="en">
+            <body>
+                <QueryClientProvider client={queryClient}>
+                    {children}
+                </QueryClientProvider>
+            </body>
+        </html>
+    );
+}
