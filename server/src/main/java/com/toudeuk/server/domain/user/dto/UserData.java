@@ -1,23 +1,3 @@
-package com.toudeuk.server.domain.user.dto;
-
-import com.toudeuk.server.domain.user.entity.User;
-
-import lombok.Data;
-
-public class UserData {
-
-	@Data
-	public static class Info {
-		private String nickName;
-		private String profileImg;
-		private int cash;
-
-		public static Info of(User user) {
-			Info info = new Info();
-			info.nickName = user.getNickName();
-			info.profileImg = user.getProfileImg();
-			info.cash = user.getCash();
-			return info;
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:27352338f30f684108d6d9b79ef6a497705fbaaad68be3129d8319aa7fb2b939
+size 1017
