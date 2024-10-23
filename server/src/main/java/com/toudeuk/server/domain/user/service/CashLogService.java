@@ -1,15 +1,3 @@
-package com.toudeuk.server.domain.user.service;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
-@Service
-@RequiredArgsConstructor
-@Transactional(readOnly = true)
-public class CashLogService {
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1f80f38d24932e616f74fd02d732c4d3b19d6d59dfb5ee148b8af2e2943b23af
+size 1154
