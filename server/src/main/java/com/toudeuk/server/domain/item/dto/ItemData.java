@@ -1,23 +1,3 @@
-package com.toudeuk.server.domain.item.dto;
-
-import com.toudeuk.server.domain.item.entity.Item;
-
-import lombok.Data;
-
-public class ItemData {
-
-	@Data
-	public static class ItemInfo {
-		private String itemName;
-		private String itemImage;
-		private int itemPrice;
-
-		public static ItemInfo of(Item item) {
-			ItemInfo itemInfo = new ItemInfo();
-			itemInfo.itemName = item.getName();
-			itemInfo.itemImage = item.getImage();
-			itemInfo.itemPrice = item.getPrice();
-			return itemInfo;
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:921610f2d0de72fa2cc8c5c39dd3d230bc60941ea4d82bb47f178391a66cd85f
+size 551
