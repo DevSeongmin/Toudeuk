@@ -1,15 +1,3 @@
-// import { RankInfo } from "@/types/rankInfo"
-
-import { BaseResponse } from "@/types/Base"
-import instance from "./clientApi"
-import { RankInfo } from "@/types/rankInfo";
-
-export const fetchRank = async (): Promise<RankInfo[]> => {
-
-    const response = await instance.get<BaseResponse<RankInfo[]>>("/rank");
-    if (!response.data.success) {
-        throw new Error(response.data.message)
-    }
-
-    return response.data.data || [];
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ad14266f7c835b3563329a521ef5fd57ee4ca572e9ee0f2bb4ca141ec5e0a946
+size 883
