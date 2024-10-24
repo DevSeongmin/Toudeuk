@@ -1,11 +1,3 @@
-import Button from "./components/Button";
-import CurrentRank from "./components/CurrentRank";
-
-export default function Toudeuk() {
-  return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
-      <CurrentRank rank = {7}/>
-      <Button/>
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:83ea0a80eb8afa0bdb7ec905272651c93c38884bb6b7a28151facb062d0fbb55
+size 1010
