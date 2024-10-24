@@ -1,14 +1,3 @@
-package com.toudeuk.server.domain.game.repository;
-
-import com.toudeuk.server.domain.game.entity.ClickGameLog;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-
-public interface ClickGameLogRepository extends JpaRepository<ClickGameLog, Long> {
-
-    @Query("SELECT COUNT(c) FROM ClickGameLog c WHERE c.clickGame.id = :clickGameId")
-    int countByClickGameId(Long clickGameId);
-
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:92509b7d33176e7110d47a6480eacce735d004587ffda44ae40d55b763dc5713
+size 683
