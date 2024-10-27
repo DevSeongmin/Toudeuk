@@ -1,14 +1,3 @@
-"use client"
-
-const Myprofile = () => {
-    // const [userInfo, setUserInfo] = useState<UserInfo | null>(null); // 사용자 정보를 상태로 관리
-    // const [loading, setLoading] = useState(true); // 로딩 상태 관리
-    const accessToken = sessionStorage.getItem('accessToken')
-
-
-    return (
-        <div>accessToken: {accessToken}</div>
-    )
-}
-
-export default Myprofile
+version https://git-lfs.github.com/spec/v1
+oid sha256:876cc95d298116f13cba0c2d0fe9e44ba1413763dcadda3f550cb3df3301283e
+size 623
