@@ -1,16 +1,3 @@
-import withPWAInit from "@ducanh2912/next-pwa";
-
-const withPWA = withPWAInit({
-  dest: "public",
-  register: true,
-  skipWaiting: true,
-});
-
-export default withPWA({
-  // Your Next.js config
-  productionBrowserSourceMaps: false, // 프로덕션에서 소스 맵 비활성화
-  images: {
-    domains: ["bizimg.giftishow.com", "picsum.photos", "cdn-icons-png.flaticon.com"], // 외부 도메인 추가
-    //remotePatterns 옵션을 사용하는 것을 권장 수정해보기
-  },
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:cfb6cfd9ed0e6d6e64499b36126fcd472b17543dd3661ec39c1ed41af1702219
+size 1919
