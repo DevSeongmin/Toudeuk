@@ -1,20 +1,3 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "#FFFFFF", // 검정 배경으로 고정
-        foreground: "#202020", // 흰색 텍스트 색상으로 고정
-      },
-    },
-  },
-  plugins: [],
-};
-
-export default config;
+version https://git-lfs.github.com/spec/v1
+oid sha256:77690c3e2083657622808433b00160f4263a833cc64e44c825a14f06f0a706de
+size 3093
