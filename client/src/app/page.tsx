@@ -1,12 +1,3 @@
-export default function Home() {
-  return (
-    <>
-      <div className="p-td">
-        <h1 className="typo-title">터득</h1>
-        <h1 className="typo-title">TouDeuk</h1>
-        <div className="typo-body">typo-body는 18px</div>
-        <div className="typo-title">typo-title : title은 40px</div>
-      </div>
-    </>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:66825898ccc51c64e96ff72872b2eb32e75851c4f9c5620b9bd8dda7e057e102
+size 597
