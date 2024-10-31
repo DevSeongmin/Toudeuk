@@ -1,17 +1,3 @@
-import HistoryList from "./components/HistoryList";
-
-export default function HistoryPage() {
-  return (
-    <div className="flex flex-col h-full scrollbar-hidden">
-      <section className="flex-shrink-0 flex items-end">
-        <div className="typo-title mb-2 z-10">
-          <p>Game</p>
-          <p>History</p>
-        </div>
-      </section>
-      <section className="flex-grow overflow-hidden">
-        <HistoryList />
-      </section>
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:94255dd815b2659b75f549e98a9c87ea9a1b7d34f9fb607488d60c902969efda
+size 1946
