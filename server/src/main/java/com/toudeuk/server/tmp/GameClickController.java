@@ -1,17 +1,3 @@
-package com.toudeuk.server.tmp;
-
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class GameClickController {
-
-	private static Integer cnt = 0;
-
-	@MessageMapping("/game")
-	@SendTo("/topic/game")
-	public Integer greeting() {
-		return ++cnt;
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fb67ecc96d13f7a70852dcca75c936c4c79c9bc52fb93432ca0beb4111e6cc3b
+size 1159
