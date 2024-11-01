@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5538ccbadaa711f902a1152f07efc48bebaeac30e2cf8dd598658ff010dc4f64
-size 803
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Login from "./componnents/Login";
+
+export default function Home() {
+  return (
+    <div className="p-td flex flex-col justify-center w-full h-full min-h-screen relative">
+      <div className="relative z-10">
+        <Login />
+      </div>
+    </div>
+  );
+}
