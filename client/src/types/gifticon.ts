@@ -1,15 +1,3 @@
-export interface GifticonInfo {
-  itemId: number;
-  itemName: string;
-  itemImage: string;
-  itemPrice: number;
-}
-
-export interface UserGifticonInfo {
-  userItemId: number;
-  itemName: string;
-  itemImage: string;
-  itemPrice: number;
-  createdAt: string;
-  used: boolean;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9dd2f9201f5c97a13923c0c45526f17f09c575d8e97e4755f180e4bd3daacfd8
+size 588
