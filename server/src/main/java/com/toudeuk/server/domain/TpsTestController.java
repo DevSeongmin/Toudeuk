@@ -1,14 +1,3 @@
-package com.toudeuk.server.domain;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.toudeuk.server.core.response.SuccessResponse;
-
-@RestController
-public class TpsTestController {
-	@GetMapping("/test")
-	public SuccessResponse<String> test() {
-		return SuccessResponse.of("test");
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f7f3cb2ae41870dc8ce52d0e663da02239f726496ad66f4afadfa7746f8a8f00
+size 935
