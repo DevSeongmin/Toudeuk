@@ -1,24 +1,3 @@
-"use client";
-
-import { CUSTOM_ICON } from "@/constants/customIcons";
-import dynamic from "next/dynamic";
-
-const LottieAnimation = dynamic(
-  () => import("@/app/components/LottieAnimation"),
-  { ssr: false }
-);
-
-const Loading = () => {
-  return (
-    <div className="w-full h-full flex justify-center items-center">
-      <LottieAnimation
-        animationData={CUSTOM_ICON.dataset}
-        loop={true}
-        width={300}
-        height={300}
-      />
-    </div>
-  );
-};
-
-export default Loading;
+version https://git-lfs.github.com/spec/v1
+oid sha256:69ead7623bc80412970fa14c10a1dd802f358be8c20058ab9a3be7a6d6cda48a
+size 524
