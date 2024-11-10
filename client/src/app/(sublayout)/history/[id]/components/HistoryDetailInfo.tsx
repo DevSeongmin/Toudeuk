@@ -1,20 +1,3 @@
-import {
-  DetailContentInfo,
-} from "@/types";
-
-export default function HistoryDetailItem({
-  content,
-}: {
-  content: DetailContentInfo;
-}) {
-  return (
-    <div className="p-3 rounded-md bg-white border border-gray-300 hover:border-gray-400 transition-colors duration-300">
-          {content.clickGameId} • {content.nickname} • {content.clickOrder}
-      
-        <p className="text-gray-400 text-xs">
-          {new Date(content.createdAt).toLocaleString()}
-        </p>
-    </div>
-  );
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cbafe1dced644abdcb522bf557294b241446fe8d9c6310c852a6bdef7dcb30f0
+size 992
