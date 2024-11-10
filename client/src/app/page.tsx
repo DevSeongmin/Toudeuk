@@ -1,14 +1,3 @@
-import Login from "./components/Login";
-
-
-export default function Home() {
-  return (
-    <div className="bg-white p-8 flex flex-col justify-center w-full h-full min-h-screen relative">
-      <div className="">
-        <h1 className="typo-title font-[120px]">터득</h1>
-        <h1 className="typo-title">TouDeuk</h1>
-        <Login />
-      </div>
-    </div>
-  );
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:16d146c9fd70833ee20382ae80a8c64dd78402e5b252114431a3441a3e577421
+size 3360
