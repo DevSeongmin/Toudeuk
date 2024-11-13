@@ -1,9 +1,3 @@
-export default function StartGame() {
-  return (
-    <div className="absolute inset-0 flex justify-center items-center z-50">
-      <h1 className="text-4xl font-bold text-white animate-fade-in-out">
-        GameStart
-      </h1>
-    </div>
-  )
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3d759c2401e6aaf74ec97385cee9dc139a6262141ff7a07b77f84bda9df9366b
+size 1073
