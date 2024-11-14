@@ -1,20 +1,3 @@
-"use client";
-
-import { CUSTOM_ICON } from "@/constants/customIcons";
-import LottieAnimation from "@/app/components/LottieAnimation";
-
-const Loading = () => {
-  return (
-    <div className="w-full h-full flex justify-center items-center">
-      <LottieAnimation
-        animationData={CUSTOM_ICON.littleLoading}
-        loop={true}
-        width={300}
-        height={250}
-        autoplay={true}
-      />
-    </div>
-  );
-};
-
-export default Loading;
+version https://git-lfs.github.com/spec/v1
+oid sha256:7e7c4de5b8b901514c1c6295a04ddaf5673d49b1dd5e981bcd7fa109be3b0c2c
+size 697
