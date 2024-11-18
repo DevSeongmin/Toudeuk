@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:481b3c728ba757ec42f91b20560d356db4c704e9df7b1589a100057c8bdbf1da
-size 632
+export interface GifticonInfo {
+  itemId: number;
+  itemName: string;
+  itemImage: string;
+  itemPrice: number;
+  itemType: ItemType;
+}
+
+export enum ItemType {
+  ALL = "ALL",
+  CHICKEN = "CHICKEN",
+  COFFEE = "COFFEE",
+  VOUCHER = "VOUCHER",
+  ETC = "ETC",
+}
+export interface UserGifticonDetailInfo {
+  userItemId: number;
+  itemName: string;
+  itemImage: string;
+  itemBarcode: string;
+  itemType: ItemType;
+  createdAt: string;
+  used: boolean;
+}
+
+export interface UserGifticonInfo {
+  userItemId: number;
+  itemName: string;
+  itemImage: string;
+  itemPrice: number;
+  createdAt: string;
+  used: boolean;
+  itemType: ItemType;
+}

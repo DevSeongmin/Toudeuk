@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ec7dfa2cff6b0441c556bb18d52a254dd80cbf60f18d4aba3d2e32c592fb6e0
-size 1053
+package com.toudeuk.server.core.entity;
+
+import static com.querydsl.core.types.PathMetadataFactory.*;
+
+import com.querydsl.core.types.dsl.*;
+
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.processing.Generated;
+import com.querydsl.core.types.Path;
+
+
+/**
+ * QTimeEntity is a Querydsl query type for TimeEntity
+ */
+@Generated("com.querydsl.codegen.DefaultSupertypeSerializer")
+public class QTimeEntity extends EntityPathBase<TimeEntity> {
+
+    private static final long serialVersionUID = 181666285L;
+
+    public static final QTimeEntity timeEntity = new QTimeEntity("timeEntity");
+
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
+    public QTimeEntity(String variable) {
+        super(TimeEntity.class, forVariable(variable));
+    }
+
+    public QTimeEntity(Path<? extends TimeEntity> path) {
+        super(path.getType(), path.getMetadata());
+    }
+
+    public QTimeEntity(PathMetadata metadata) {
+        super(TimeEntity.class, metadata);
+    }
+
+}
+

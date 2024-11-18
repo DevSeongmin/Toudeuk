@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54a88dc3a0ba0c87ffc2e94862eb501b6f180911a0d73deef55f98f0adbf87fe
-size 1360
+package com.toudeuk.server.core.exception;
+
+import org.springframework.validation.Errors;
+
+import lombok.Getter;
+
+@Getter
+public class BaseException extends RuntimeException {
+    private final ErrorCode errorCode;
+    private final String message;
+    private Errors errors;
+
+    public BaseException(Throwable cause) {
+        super(cause);
+        this.errorCode = ErrorCode.SERVER_ERROR;
+        this.message = cause.getMessage();
+    }
+
+    public BaseException(ErrorCode errorCode, Throwable cause) {
+        super(cause);
+        this.errorCode = errorCode;
+        this.message = errorCode.getMessage();
+    }
+
+    public BaseException(ErrorCode errorCode) {
+        super(errorCode.getMessage());
+        this.errorCode = errorCode;
+        this.message = errorCode.getMessage();
+    }
+
+    public BaseException(ErrorCode errorCode, Errors errors) {
+        super(errorCode.getMessage());
+        this.errorCode = errorCode;
+        this.message = errorCode.getMessage();
+        this.errors = errors;
+    }
+
+    public BaseException(ErrorCode errorCode, String message) {
+        super(message);
+        this.errorCode = errorCode;
+        this.message = message;
+    }
+
+    public BaseException(ErrorCode errorCode, String message, Throwable cause) {
+        super(cause);
+        this.errorCode = errorCode;
+        this.message = message;
+    }
+}

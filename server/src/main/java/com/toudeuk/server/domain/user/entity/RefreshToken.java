@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ff4e63c07d9f3285ccac0ccbd8395d9d71df75f6b5983c21318056e6bc8dd84
-size 838
+package com.toudeuk.server.domain.user.entity;
+
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+public class RefreshToken {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "refresh_token_id")
+    private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_refresh_token_user_id"))
+    private User user;
+
+    private String refreshToken;
+
+    public RefreshToken(User user, String refreshToken) {
+        this.user = user;
+        this.refreshToken = refreshToken;
+    }
+
+    public RefreshToken update(String newRefreshToken) {
+        this.refreshToken = newRefreshToken;
+        return this;
+    }
+}

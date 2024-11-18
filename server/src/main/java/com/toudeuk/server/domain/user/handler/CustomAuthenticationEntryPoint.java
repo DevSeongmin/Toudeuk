@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09dff7a9de3cc17645d65b4b4a3ee531db65a024368e9205aa7b02a296611eba
-size 1204
+package com.toudeuk.server.domain.user.handler;
+
+import com.toudeuk.server.core.exception.ErrorCode;
+import com.toudeuk.server.core.response.ErrorResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+
+@Component
+public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
+    @Override
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        if (request.getAttribute("error-message") == null) {
+            request.setAttribute("error-message", ErrorCode.INVALID_TOKEN.getMessage());
+        }
+        ErrorResponse errorResponse = ErrorResponse.of(ErrorCode.INVALID_TOKEN, request.getAttribute("error-message").toString());
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().write(errorResponse.toJson());
+    }
+}

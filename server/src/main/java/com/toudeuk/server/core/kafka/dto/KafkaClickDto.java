@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:916a4230c5e44c9aff17cf625dbc7139d16ea60a3c84e2d649a8e400584a0b72
-size 552
+package com.toudeuk.server.core.kafka.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.toudeuk.server.domain.game.entity.RewardType;
+import com.toudeuk.server.domain.user.entity.CashLogType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class KafkaClickDto {
+
+    private Long userId;
+    private Long gameId;
+    private int totalClickCount;
+    private RewardType rewardType;
+}

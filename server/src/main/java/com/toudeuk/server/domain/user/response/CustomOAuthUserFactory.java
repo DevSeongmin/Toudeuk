@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b128129bc586df9f826d8352d60b7a4fe8744051f29da0a14b2295b73cab4a1
-size 718
+package com.toudeuk.server.domain.user.response;
+
+import com.toudeuk.server.domain.user.entity.ProviderType;
+import com.toudeuk.server.domain.user.response.impl.GoogleResponse;
+import com.toudeuk.server.domain.user.response.impl.KakaoResponse;
+import com.toudeuk.server.domain.user.response.impl.NaverResponse;
+
+import java.util.Map;
+
+public class CustomOAuthUserFactory {
+    public static OAuth2Response parseOAuth2Response(ProviderType providerType, Map<String, Object> attributes) {
+        return switch (providerType) {
+            case NAVER -> new NaverResponse(attributes);
+            case GOOGLE -> new GoogleResponse(attributes);
+            case KAKAO -> new KakaoResponse(attributes);
+        };
+    }
+}

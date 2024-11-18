@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ef4523b438f5d56f9cfbcd53ca375132ee6cd82a4e6318e996e3fd3ac59049f
-size 643
+export default function Login() {
+  const handleKakaoLogin = () => {
+    window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao?redirect_uri=${process.env.NEXT_PUBLIC_BASE_URL}`;
+    // window.location.href = `http://toudeuk.kr:8080/oauth2/authorization/kakao?redirect_uri=https://toudeuk.kr`;
+  };
+
+  return (
+    <div className="flex justify-center items-center min-w-[150px] min-h-[150px] rounded-full bg-[#FEE500] ">
+      <button
+        onClick={handleKakaoLogin}
+        className="typo-title font-bold h-full w-full p-2"
+      >
+        <p>Game</p>
+        <p>Start</p>
+      </button>
+    </div>
+  );
+}

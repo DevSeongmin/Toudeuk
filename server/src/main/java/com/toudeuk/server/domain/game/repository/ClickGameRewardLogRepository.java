@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6fb2ec292b0338311f57b62dcb9eea4c81f110b2539ef4649f7fd1542e9bd596
-size 589
+package com.toudeuk.server.domain.game.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.toudeuk.server.domain.game.entity.ClickGameRewardLog;
+
+public interface ClickGameRewardLogRepository
+	extends JpaRepository<ClickGameRewardLog, Long>, ClickGameRewardLogQueryRepository {
+
+	@Query("SELECT c FROM ClickGameRewardLog c WHERE c.user.id = :userId ORDER BY c.clickGame.id DESC")
+	Optional<List<ClickGameRewardLog>> findAllByUserId(Long userId);
+
+}

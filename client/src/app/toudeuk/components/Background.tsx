@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b7aed6e4d9eb637d993c461d01631c55a475e0e106ba6a0fd7cfc17c2a80fe5
-size 719
+import Image from "next/image";
+import { useMemo, ReactElement } from "react";
+
+// Props 인터페이스 정의
+interface BackgroundProps {
+  className?: string;
+}
+
+// 함수 선언식으로 정의된 Background 컴포넌트
+function Background({ className }: BackgroundProps): ReactElement {
+  const backgroundImage = useMemo(
+    () => (
+      <div
+        className={`w-full absolute brightness-40 bottom-0 ${className ?? ""}`}
+        draggable="false"
+      >
+        <Image
+          src="/countryside.svg"
+          alt="Background Image"
+          width={500}
+          height={200}
+          priority
+        />
+      </div>
+    ),
+    [className]
+  );
+
+  return backgroundImage;
+}
+
+export default Background;

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e7c4de5b8b901514c1c6295a04ddaf5673d49b1dd5e981bcd7fa109be3b0c2c
-size 697
+"use client";
+
+import { CUSTOM_ICON } from "@/constants/customIcons";
+import LottieAnimation from "@/app/components/LottieAnimation";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+
+const Loading = () => {
+  const pathname = usePathname();
+
+  if (pathname === "/toudeuk") {
+    return null;
+  }
+
+  return (
+    <div className="w-full h-full flex flex-col justify-center items-center">
+      <div className="typo-sub-title">Loading....</div>
+      <LottieAnimation
+        animationData={CUSTOM_ICON.littleLoading}
+        loop={true}
+        width={300}
+        height={250}
+        autoplay={true}
+      />
+    </div>
+  );
+};
+
+export default Loading;

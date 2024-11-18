@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:92a6dce34bddab46bb078fd5a02f6da87d284ae5977960cb9a0013eecd796d41
-size 716
+import LottieAnimation from "@/app/components/LottieAnimation";
+import { CUSTOM_LETTER } from "@/constants/tudeukLetter";
+
+export default function Title() {
+  const letters = "toudeuk";
+
+  return (
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+      {letters.split("").map((char, index) => {
+        const animationKey =
+          `text${char.toUpperCase()}` as keyof typeof CUSTOM_LETTER;
+        return (
+          <LottieAnimation
+            key={index}
+            animationData={CUSTOM_LETTER[animationKey]}
+            loop={true}
+            width={50}
+            height={50}
+            autoplay={true}
+          />
+        );
+      })}
+    </div>
+  );
+}

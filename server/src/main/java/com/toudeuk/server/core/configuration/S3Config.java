@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e58941c064f45f1d1e61cec9a5af7654f476f38e801675e4eb150b9db2c8eb01
-size 1034
+package com.toudeuk.server.core.configuration;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Configuration
+public class S3Config {
+	@Value("${cloud.aws.region.static}")
+	private String region;
+
+	@Value("${cloud.aws.credentials.access-key}")
+	private String accessKey;
+
+	@Value("${cloud.aws.credentials.secret-key}")
+	private String secretKey;
+
+	@Bean
+	public AmazonS3 amazonS3Client() {
+		AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+		return AmazonS3ClientBuilder
+			.standard()
+			.withRegion(region)
+			.withCredentials(new AWSStaticCredentialsProvider(credentials))
+			.build();
+	}
+}

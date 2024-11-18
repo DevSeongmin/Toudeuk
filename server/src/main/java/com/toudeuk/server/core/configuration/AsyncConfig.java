@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f693d0aa31246f082f57502e73d2d83f329c87caa3d8170424e2e4a829cb77
-size 830
+package com.toudeuk.server.core.configuration;
+
+import java.util.concurrent.Executor;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+@EnableAsync
+@Configuration
+public class AsyncConfig {
+	@Bean(name = "imageExecutor")
+	public Executor imageUploadExecutor() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+
+		int corePoolSize = 5;
+		int maxPoolSize = 10;
+		int queueCapacity = 100;
+
+		executor.setThreadGroupName("imageExecutor");
+		executor.setCorePoolSize(corePoolSize);
+		executor.setMaxPoolSize(maxPoolSize);
+		executor.setQueueCapacity(queueCapacity);
+		executor.initialize();
+
+		return executor;
+	}
+}

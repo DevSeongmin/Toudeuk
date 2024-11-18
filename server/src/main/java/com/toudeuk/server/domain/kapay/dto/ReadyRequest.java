@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa93b0c63a7c4e2c218146cae3455ac4a84d35da776a8880c75cf1a86df84c2b
-size 627
+package com.toudeuk.server.domain.kapay.dto;
+
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+public class ReadyRequest {
+	private String cid;
+	private String partnerOrderId;
+	private String partnerUserId;
+	private String itemName;
+	private Integer quantity;
+	private Integer totalAmount;
+	private Integer taxFreeAmount;
+	private Integer vatAmount;
+	private String approvalUrl;
+	private String cancelUrl;
+	private String failUrl;
+}

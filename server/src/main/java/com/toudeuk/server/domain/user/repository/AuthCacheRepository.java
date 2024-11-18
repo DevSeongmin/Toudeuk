@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c4bcfd14b3dde552e8a81f5b8670d5e2be84e6c781ec760f3edb5cc2b2758026
-size 833
+package com.toudeuk.server.domain.user.repository;
+
+
+import com.toudeuk.server.core.properties.JwtProperties;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@RequiredArgsConstructor
+public class AuthCacheRepository {
+    private final RedisTemplate<String, Object> redisTemplate;
+    private final JwtProperties properties;
+
+    public void save(String key, Object value) {
+        redisTemplate.opsForValue().set(key, value, properties.getRefreshExpire());
+    }
+
+    public String findByUsername(String username) {
+        return (String) redisTemplate.opsForValue().get(username);
+    }
+
+    public boolean existsByUsername(String username) {
+        return redisTemplate.opsForValue().get(username) != null;
+    }
+}

@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b24918c6fd3e0bf2f8df8f9ded41b624cb19b971b879b24edb904055efedad68
-size 802
+package com.toudeuk.server.domain.user.response.impl;
+
+import java.util.Map;
+
+import com.toudeuk.server.domain.user.entity.ProviderType;
+import com.toudeuk.server.domain.user.response.OAuth2Response;
+
+public class GoogleResponse implements OAuth2Response {
+	private final Map<String, Object> attribute;
+
+	public GoogleResponse(Map<String, Object> attribute) {
+		this.attribute = attribute;
+	}
+
+	@Override
+	public ProviderType getProvider() {
+		return ProviderType.GOOGLE;
+	}
+
+	@Override
+	public String getProviderId() {
+		return attribute.get("sub").toString();
+	}
+
+	@Override
+	public String getEmail() {
+		return attribute.get("email").toString();
+	}
+
+	@Override
+	public String getName() {
+		return attribute.get("name").toString();
+	}
+
+	@Override
+	public String getProfileImage() {
+		return "";
+	}
+}

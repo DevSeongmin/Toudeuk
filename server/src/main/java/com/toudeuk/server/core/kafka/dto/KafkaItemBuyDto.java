@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2826356c8484b2c27b49c966dad3cfcfd8c49bc5dc1f150b9b87b3cb9fb35784
-size 615
+package com.toudeuk.server.core.kafka.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.toudeuk.server.domain.user.entity.CashLogType;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class KafkaItemBuyDto {
+
+	// 유저 ID, Item ID, changeCash, resultCash, item.getName(), CashLogType.ITEM
+	private Long userId;
+	private Long itemId;
+	private int changeCash;
+	private int resultCash;
+	private String itemName;
+	private CashLogType cashLogType;
+}

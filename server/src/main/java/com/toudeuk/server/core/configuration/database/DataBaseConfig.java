@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e58f5158bc6186c23439953cad33d2deff9c6d21d974fff75a711a30cd11e5ea
-size 585
+package com.toudeuk.server.core.configuration.database;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+import com.querydsl.jpa.impl.JPAQueryFactory;
+
+import jakarta.persistence.EntityManager;
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@RequiredArgsConstructor
+@EnableJpaAuditing
+
+public class DataBaseConfig {
+	private final EntityManager em;
+
+	@Bean
+	public JPAQueryFactory queryFactory() {
+		return new JPAQueryFactory(em);
+	}
+
+}

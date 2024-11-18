@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:783860b8bdf8f4eaebbc90cc77dfa28e75d15fff4bcd66babe4b02e25b294c37
-size 700
+package com.toudeuk.server.domain.user.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.toudeuk.server.domain.user.entity.User;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+	Optional<User> findByName(String name);
+
+	@Query("SELECT u FROM User u WHERE u.username = :username")
+	Optional<User> findByUsername(@Param("username") String username);
+
+	@Query("SELECT u FROM User u WHERE u.nickname = :nickname")
+	Optional<User> findByNickname(@Param("nickname") String nickname);
+}

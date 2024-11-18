@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9367762b9e2a904950b0286e21eeccc7df5cd95574cdfa405f63280df892de2
-size 805
+"use client";
+import { useRouter } from "next/navigation";
+import { TiArrowBack } from "react-icons/ti";
+import React from "react";
+
+export default function BackButton() {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back(); // 이전 페이지로 이동
+  };
+
+  return (
+    <button
+      onClick={handleBack}
+      className="p-2 rounded-md hover:bg-gray-600 transition flex items-center justify-center "
+      style={{
+        width: "36px",
+        height: "36px",
+        backgroundColor: "rgba(185, 202, 255, 0.724)", // 배경색
+        color: "#ffffff", // 글씨(이모티콘) 흰색
+        fontSize: "24px", // 이모티콘 크기 조정
+      }}
+      aria-label="뒤로가기"
+    >
+      {/* 뒤로가기 이모티콘 */}
+      <TiArrowBack/>
+    </button>
+  );
+}
